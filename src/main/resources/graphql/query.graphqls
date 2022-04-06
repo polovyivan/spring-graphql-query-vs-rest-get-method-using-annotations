@@ -1,0 +1,34 @@
+scalar Date
+
+type Query {
+     hello : String
+
+     customers(
+                  fullName : String
+                  phoneNumber : String
+                  createdAt : Date
+                  paymentType : String) : [CustomerResponse]
+
+     customer(customerId : String) : CustomerResponse
+
+     customerTransactions(customerId : String) :  [PurchaseTransactionResponse]
+
+     customerTransaction(customerId : String
+                         purchaseTransactionId : String) : PurchaseTransactionResponse
+}
+
+type CustomerResponse {
+      id : String
+      fullName : String
+      phoneNumber : String
+      address : String
+      createdAt : Date
+      purchaseTransactions : [PurchaseTransactionResponse]
+}
+
+type PurchaseTransactionResponse {
+      id : String
+      paymentType : String
+      amount : Float
+      createdAt : Date
+}
