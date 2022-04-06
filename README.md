@@ -1,0 +1,1 @@
+# spring-graphql-query-vs-rest-get-method-using-annotations
