@@ -6,11 +6,7 @@ import com.polovyi.ivan.service.CustomerService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -45,7 +41,7 @@ public record CustomerGraphQLController(CustomerService customerService) {
     }
 
     @QueryMapping(name = "customerTransaction")
-    public PurchaseTransactionResponse getCustomerById(@Argument @NotNull String customerId,
+    public PurchaseTransactionResponse getCustomerPurchaseTransactionById(@Argument @NotNull String customerId,
                                                        @Argument @NotNull String purchaseTransactionId) {
         return customerService.getCustomerPurchaseTransactionsById(customerId, purchaseTransactionId);
     }
