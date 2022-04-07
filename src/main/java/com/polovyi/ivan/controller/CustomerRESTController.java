@@ -47,7 +47,7 @@ public record CustomerRESTController(CustomerService customerService) {
 
     @GetMapping(path = "/v1/customers/{customerId}/purchase-transactions/{purchaseTransactionId}")
     @ResponseStatus(HttpStatus.OK)
-    public PurchaseTransactionResponse getCustomerById(@PathVariable String customerId,
+    public PurchaseTransactionResponse getCustomerPurchaseTransactionById(@PathVariable String customerId,
             @PathVariable String purchaseTransactionId) {
         return customerService.getCustomerPurchaseTransactionsById(customerId, purchaseTransactionId);
     }
