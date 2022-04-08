@@ -36,7 +36,7 @@
 					"response": []
 				},
 				{
-					"name": "all-customers",
+					"name": "customers",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -63,7 +63,7 @@
 					"response": []
 				},
 				{
-					"name": "all-customers (with variables)",
+					"name": "customers (with variables)",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -97,7 +97,7 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query {\n    customer( customerId: \"03d1c7f7-bb6a-499b-9dde-c4e0218051a8\") {\n                                              id\n                                              fullName \n                                              phoneNumber\n                                              address\n                                              createdAt\n                                              purchaseTransactions {\n                                                                    id \n                                                                    paymentType\n                                                                    amount \n                                                                    createdAt\n                                                                    }\n\n                                                    }\n}",
+								"query": "query {\n    customer( customerId: \"07e47fd1-dff2-437d-b6f4-195ebf0fbf01\") {\n                                              id\n                                              fullName \n                                              phoneNumber\n                                              address\n                                              createdAt\n                                              purchaseTransactions {\n                                                                    id \n                                                                    paymentType\n                                                                    amount \n                                                                    createdAt\n                                                                    }\n\n                                                    }\n}",
 								"variables": ""
 							}
 						},
@@ -254,7 +254,7 @@
 			]
 		},
 		{
-			"name": "/customers (with filters)",
+			"name": "/customers",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -290,27 +290,6 @@
 							"key": "paymentType",
 							"value": "DINERS_CLUB"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/customers-all",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8001/spring-graphql-query-vs-rest-get-method/v1/customers-all",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8001",
-					"path": [
-						"spring-graphql-query-vs-rest-get-method",
-						"v1",
-						"customers-all"
 					]
 				}
 			},

@@ -17,12 +17,6 @@ import java.util.List;
 @RestController
 public record CustomerRESTController(CustomerService customerService) {
 
-    @GetMapping(path = "/v1/customers-all")
-    @ResponseStatus(HttpStatus.OK)
-    public List<CustomerResponse> getAllCustomers() {
-        return customerService.getAllCustomers();
-    }
-
     @GetMapping(path = "/v1/customers")
     @ResponseStatus(HttpStatus.OK)
     public List<CustomerResponse> getAllCustomersWithFilters(
