@@ -6,6 +6,7 @@ import com.polovyi.ivan.service.CustomerService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 import javax.validation.constraints.NotNull;
@@ -40,7 +41,8 @@ public record CustomerGraphQLController(CustomerService customerService) {
         return customerService.getAllCustomerPurchaseTransactions(customerId);
     }
 
-    @QueryMapping(name = "customerTransaction")
+    //@QueryMapping(name = "customerTransaction")
+    @SchemaMapping(typeName = "Query", value = "customerTransaction")
     public PurchaseTransactionResponse getCustomerPurchaseTransactionById(@Argument @NotNull String customerId,
                                                        @Argument @NotNull String purchaseTransactionId) {
         return customerService.getCustomerPurchaseTransactionsById(customerId, purchaseTransactionId);
