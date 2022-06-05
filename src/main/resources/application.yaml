@@ -7,13 +7,14 @@ graphql:
   extended-scalars: BigDecimal, Date
 
 spring:
-
   graphql:
     path: /customers-graphql
     schema:
       printer:
         enabled: true # The GraphQL schema can be viewed at HTTP GET /graphql/schema by enabling this property ???
       locations: classpath:graphql/
+    graphiql:
+      enabled: true
 
   datasource:
     url: jdbc:h2:mem:customerdb
