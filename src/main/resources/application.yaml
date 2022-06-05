@@ -11,10 +11,10 @@ spring:
     path: /customers-graphql
     schema:
       printer:
-        enabled: true # The GraphQL schema can be viewed at HTTP GET /graphql/schema by enabling this property ???
+        enabled: true
       locations: classpath:graphql/
     graphiql:
-      enabled: true
+      enabled: true # Docs can be accessed http://localhost:8001/spring-graphql-query-vs-rest-get-method/graphiql?path=/spring-graphql-query-vs-rest-get-method/customers-graphql
 
   datasource:
     url: jdbc:h2:mem:customerdb
